@@ -1,0 +1,24 @@
+CREATE DATABASE  IF NOT EXISTS `ATM_directory`;
+USE `ATM_directory`;
+
+CREATE TABLE `bank` (
+  `account_No` int(11) NOT NULL AUTO_INCREMENT,
+  `pin` varchar(200) NOT NULL,
+  `full_name` varchar(200) DEFAULT NULL,
+  `amount` varchar(200)NOT NULL,
+  PRIMARY KEY (`account_No`)
+) AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `bank`;
+
+--
+-- Data for table `patient`
+--
+
+INSERT INTO `bank` VALUES 
+	(101,'8904','Raju','2000'),
+	(102,'8005','Emma','5000');
+	
+	
+
+Select * from bank;
