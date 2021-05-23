@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Save Patient</title>
+</head>
+
+<body>
+
+	<div class="container">
+	
+		<h3>Create New Account</h3>
+		<hr>
+	
+		<form action="#" th:action="@{/ATM/save}"
+						 th:object="${bank}" method="POST">
+		
+			<label>Account No:</label>
+			<input type="text" th:field="*{accountNo}"
+					class="form-control mb-4 col-4" placeholder="Account No" required>
+			
+			<label>Pin:</label>
+			<input type="text" th:field="*{pin}"
+					class="form-control mb-4 col-4" placeholder="Pin" required>
+			
+			<label>Full name:</label>
+			<input type="text" th:field="*{fullName}"
+					class="form-control mb-4 col-4" placeholder="Full name" required>
+					
+			<label>Amount:</label>		
+			<input type="text" th:field="*{amount}"
+					class="form-control mb-4 col-4" placeholder="Amount" required>
+
+			<button type="submit" class="btn btn-primary btn-sm mb-3">Submit</button>
+						
+		</form>
+	
+		<hr>
+		<a th:href="@{/patients/list}">Back to Patients List</a>
+		
+	</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

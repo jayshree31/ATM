@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>ATM</title>
+</head>
+
+<style type="text/css">
+    span {
+        display: inline-block;
+        width: 200px;
+        text-align: left;
+    }
+</style>
+
+<body>
+
+<div class="container">
+
+	<h3>ATM Services</h3>
+	<hr>
+	 <p class="h4 mb-4">Welcome..!</p>
+	
+
+	<span>Full name:</span><span th:text="${bank.fullName}"></span><br/>
+    
+	<br>
+	<!-- Add a button -->
+	
+	
+	
+	<form action="#" th:action="@{/ATM/deposit}" method="POST">
+			<button type="submit" class="btn btn-primary btn-sm mb-3">Cash Deposit</button>
+			<input type="text" id="deposit" name="deposit"
+					class="form-control mb-4 col-4" placeholder="Enter Deposit Amount" required>
+			<input type="hidden" name="accountNo" th:value="${bank.accountNo}" />							
+	</form> 
+	<br>
+		
+	<form action="#" th:action="@{/ATM/withdrawal}" method="POST">
+			<button type="submit" class="btn btn-primary btn-sm mb-3">Cash withdrawal</button>
+			<input type="text" name="withdrawal" id="withdrawal"
+			 class="form-control mb-4 col-4" placeholder="Enter Deposit Amount" required/>
+			<input type="hidden" name="accountNo" th:value="${bank.accountNo}" />						
+			
+	</form>
+	<br>
+	
+	<!-- <a th:href="@{/ATM/checkBal}"
+		class="btn btn-primary btn-sm mb-3">
+		Check Balance
+	</a> -->
+	<form action="#" th:action="@{/ATM/checkBal}" method="POST">
+			<button type="submit" class="btn btn-primary btn-sm mb-3">Check Balance</button>
+			<input type="hidden" name="accountNo" th:value="${bank.accountNo}" />						
+			
+	</form>
+	 
+</div>
+	
+</body>
+</html>
+
+
+
